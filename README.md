@@ -35,11 +35,10 @@ Simply clone the repo. Then open your terminal and navigate to the codebase. Run
 
 <img src="./assets/img/getPoints.png" width="800"/><br />
 The logic to calculate points was pretty simple given the criteria of: A customer receives 2 points for every dollar spent over $100 in each transaction, plus 1 point for every dollar spent between $50 and $100 in each transaction.
-
 (e.g. a $120 purchase = 2x$20 + 1x$50 = 90 points).
 <img src="./assets/img/useState.png" width="800"/><br />
 pointsTracker is using React state management to maintain the selectedUser, selected quarter, as well as all of the Users data returned from the "API fetch"
-<img src="./assets/img/updateSelected.png" width="800"/><br />
+<img src="./assets/img/updateSelectedUser.png" width="800"/><br />
 
 
 ### License
