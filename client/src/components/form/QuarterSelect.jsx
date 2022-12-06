@@ -1,9 +1,9 @@
 import React from 'react'
 
-function QuarterSelect(props) {
+function QuarterSelect({QKey, change}) {
   return (
-    <select name='quarter' id='quarter' onChange={props.change}>
-        <option value="">--What quarter would you like to view--</option>
+    <select key={QKey} name='quarter' id='quarter' onChange={change}>
+        <option value=''>--What quarter would you like to view--</option>
         <option value="Q1">January-March</option>
         <option value="Q2">April-June</option>
         <option value="Q3">July-September</option>

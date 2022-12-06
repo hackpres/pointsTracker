@@ -2,6 +2,7 @@ import React from 'react';
 import { getPoints } from '../../utils/usersFunctions';
 
 function Points(props) {
+    console.log(props.quarter)
     const points = [];
     const getPointData = (arr) => {
         points.push(getPoints(arr))
@@ -23,21 +24,24 @@ function Points(props) {
   return (
     <>
         <div>
-            {props.quarter.map((month, i) => {
-                let data = Object.entries(month)
-                return (
-                    <div key={i} className='points'>
-                        <p className='monthly-points'>
-                            {data[0][0]} points: {getPointData(data[0][1])}
-                        </p>
-                        <p className='purchases-label'>Purchases:</p>
-                        <p className='purchases'>
-                            {getPurchases(data[0][1])}
-                        </p>
-                    </div>
+            {props.quarter ? 
+                props.quarter.map((month, i) => {
+                    let data = Object.entries(month)
+                    return (
+                        <div key={i} className='points'>
+                            <p className='monthly-points'>
+                                {data[0][0]} points: {getPointData(data[0][1])}
+                            </p>
+                            <p className='purchases-label'>Purchases:</p>
+                            <p className='purchases'>
+                                {getPurchases(data[0][1])}
+                            </p>
+                        </div>
 
-                )
-            })}
+                    )
+                })
+                : null
+            }
         </div>
         {getPointTotal(points)}
     </>

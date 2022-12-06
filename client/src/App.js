@@ -3,7 +3,6 @@ import './App.css';
 import getUsers from './utils/api';
 import UserSelect from './components/form/UserSelect';
 import QuarterSelect from './components/form/QuarterSelect';
-import H2 from './components/headers/H2';
 import getNames from './utils/usersFunctions';
 import Points from './components/display/Points';
 
@@ -11,6 +10,8 @@ function App() {
   const [users, setUsers] = useState('');
   const [selectedUser, setSelectedUser] = useState('');
   const [quarter, setQuarter] = useState([]);
+  const [userHeading, setUserHeading] = useState('Select a User to view thier points accrual!');
+  const [selectQKey, setQKey] = useState('');
   useEffect(() => {
     getUsers().then(
       json => setUsers(json.userData)
@@ -20,11 +21,17 @@ function App() {
   }, [])
   const updateSelected = (e) => {
     const selected = e.target.value.split(' ');
-    for (let i = 0; i < users.length; i++) {
-      if(users[i].firstName === selected[0]) {
-        setSelectedUser(users[i]);
+    users.map((user) => {
+      if(user.firstName === selected[0]) {
+        setSelectedUser(user);
+        setUserHeading(`Viewing points for ${user.username}.`)
+        setQuarter([])
+        setQKey(Math.random());
+      } else if (selected[0] === '') {
+        setSelectedUser('')
+        setUserHeading('Select a User to view thier points accrual!')
       }
-    }
+    })
   };
   const updateQuarter = (e) => {
     const selectedQuarter = e.target.value;
@@ -49,9 +56,9 @@ function App() {
   return (
     <>
       <h1>Points Tracker</h1>
-      <H2 name={selectedUser} />
+      <h2>{userHeading}</h2>
       <UserSelect name={getNames(users)} change={updateSelected} />
-      {selectedUser ? <QuarterSelect change={updateQuarter} /> : null}
+      {selectedUser ? <QuarterSelect QKey={selectQKey} change={updateQuarter} /> : null}
       <Points quarter={quarter} />
     </>
   );

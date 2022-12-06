@@ -42,7 +42,6 @@ select:focus {
 .points {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* gap: 10px; */
   background-color: #d0cdc7;
   margin: 3vw;
   border-radius: 4px;
