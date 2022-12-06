@@ -1,0 +1,20 @@
+{
+  "name": "pointstracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackpres/pointsTracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackpres/pointsTracker/issues"
+  },
+  "homepage": "https://github.com/hackpres/pointsTracker#readme"
+}
