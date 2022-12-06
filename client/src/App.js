@@ -5,6 +5,7 @@ import UserSelect from './components/form/UserSelect';
 import QuarterSelect from './components/form/QuarterSelect';
 import H2 from './components/headers/H2';
 import getNames from './utils/usersFunctions';
+import Points from './components/display/Points';
 
 function App() {
   const [users, setUsers] = useState('');
@@ -51,6 +52,7 @@ function App() {
       <H2 name={selectedUser} />
       <UserSelect name={getNames(users)} change={updateSelected} />
       {selectedUser ? <QuarterSelect change={updateQuarter} /> : null}
+      <Points quarter={quarter} />
     </>
   );
 }
