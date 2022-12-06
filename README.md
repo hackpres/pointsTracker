@@ -3,6 +3,8 @@
 
 ![license badge](https://img.shields.io/badge/license-isc-brightgreen)
 
+<img src="./assets/img/pTonLoad.png" width="800"/>
+
 ## Description
 pointsTracker is a React app that simulates an async API fetch to retrieve user data and return the users accrued points totals based on retail purchases within a requested quarter year.
 
@@ -12,7 +14,7 @@ pointsTracker is a React app that simulates an async API fetch to retrieve user 
 
 <img src="./assets/img/api.png" width="800"/><br />
 <img src="./assets/img/sampleDataObj.png" width="800"/><br />
-<img src="./assets/img/useEffect.png" width="800"/><br />
+<img src="./assets/img/useEffect.png" width="800"/>
 
 ## Table of Contents
 
@@ -39,6 +41,9 @@ The logic to calculate points was pretty simple given the criteria of: A custome
 <img src="./assets/img/useState.png" width="800"/><br />
 pointsTracker is using React state management to maintain the selectedUser, selected quarter, as well as all of the Users data returned from the "API fetch"
 <img src="./assets/img/updateSelectedUser.png" width="800"/><br />
+<img src="./assets/img/pTuserSelect.png" width="800"/><br />
+Once a user and a quarter have been selected pointsTracker will return the monthly points accrual as well as the total points earned for the selected quarter.
+<img src="./assets/img/pTquarterSelect.png" width="800"/>
 
 
 ### License
