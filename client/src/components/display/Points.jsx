@@ -9,7 +9,7 @@ function Points(props) {
     }
     const getPointTotal = (arr) => {
         if(arr[0] || arr[0] === 0) {
-            return <p>Total points earned = {arr.reduce((accum, curr) => accum + curr)}</p>
+            return <p className='points-total'>Quarterly points earned = {arr.reduce((accum, curr) => accum + curr)}</p>
         }
     }
     const getPurchases = (data) => {
@@ -26,12 +26,12 @@ function Points(props) {
             {props.quarter.map((month, i) => {
                 let data = Object.entries(month)
                 return (
-                    <div key={i}>
-                        <p>
-                            {data[0][0]}: {getPointData(data[0][1])}
+                    <div key={i} className='points'>
+                        <p className='monthly-points'>
+                            {data[0][0]} points: {getPointData(data[0][1])}
                         </p>
-                        <p>Purchases:</p>
-                        <p>
+                        <p className='purchases-label'>Purchases:</p>
+                        <p className='purchases'>
                             {getPurchases(data[0][1])}
                         </p>
                     </div>
